@@ -1,0 +1,48 @@
+<!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>{{ data.program }}</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>

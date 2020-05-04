@@ -1,0 +1,2481 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_17e6afb893de4df5bbc7c3e33ac8f608 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_17e6afb893de4df5bbc7c3e33ac8f608" ></div>
+        
+</body>
+<script>    
+    
+            var map_17e6afb893de4df5bbc7c3e33ac8f608 = L.map(
+                "map_17e6afb893de4df5bbc7c3e33ac8f608",
+                {
+                    center: [37.7627365, -122.4391288],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1ab10d019ac640419fcc342088a0fc0a = L.tileLayer(
+                "https://tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=b100b9604dda47e48392ba0d7ace4043",
+                {"attribution": "Spinal Map", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+            var marker_face43aeb8764fc98bc699125f2353b0 = L.marker(
+                [33.7337283, -116.7490253],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_e12815c3d986489584671369f12ccc86 = L.icon({"iconSize": [75, 56], "iconUrl": "https://www.pinclipart.com/picdir/big/57-576625_pusheen-clipart.png"});
+        marker_face43aeb8764fc98bc699125f2353b0.setIcon(custom_icon_e12815c3d986489584671369f12ccc86);
+        
+    
+        var popup_bd2853c0a30e46c4a1409c45a29fbcd3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_966f3209799e48ca97fc427f0bd731af = $(`<div id="html_966f3209799e48ca97fc427f0bd731af" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.idyllwildarts.org/"   target="_blank"" >   <h3>Idyllwild Arts Academy</h3> </a> <ul>   <li><span>Program Type:</span> High School</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 13-18, 5+ for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>30,000 / annually   </li>   <li><span>Lodging and Meals</span> Yes</li>   <li><span>Summer Tuition:</span> 675/week</li>   <li>     <span>Summer Lodging & Meals:</span>     Yes   </li>   <li>     <span>Address</span>:     <div id="addressDiv">52500 Temecula Rd Idyllwild, CA 92549</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_bd2853c0a30e46c4a1409c45a29fbcd3.setContent(html_966f3209799e48ca97fc427f0bd731af);
+        
+
+        marker_face43aeb8764fc98bc699125f2353b0.bindPopup(popup_bd2853c0a30e46c4a1409c45a29fbcd3)
+        ;
+
+        
+    
+    
+            marker_face43aeb8764fc98bc699125f2353b0.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Idyllwild Arts Academy</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a70c7981b27149e783b48bbaa62bbe62 = L.marker(
+                [34.1012342, -118.339787],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_7e4c08553dda40d9a4b403bbbe6180d3 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/399-3997759_sushi-clipart.png"});
+        marker_a70c7981b27149e783b48bbaa62bbe62.setIcon(custom_icon_7e4c08553dda40d9a4b403bbbe6180d3);
+        
+    
+        var popup_75463a2cc6b144ab9780881cebfc4957 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ef7ea4c1867e41febfff6788f15b7351 = $(`<div id="html_ef7ea4c1867e41febfff6788f15b7351" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.mi.edu/"   target="_blank"" >   <h3>Musicians Institute</h3> </a> <ul>   <li><span>Program Type:</span> College</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Contemporary</li>              <li>Technology</li>              <li>Business</li>            </ul>   </li>   <li><span>Age Group:</span> 18+, 12-18 for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>24,030 / annually   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 1500/week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">6752 Hollywood Blvd, Los Angeles, CA 90028</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_75463a2cc6b144ab9780881cebfc4957.setContent(html_ef7ea4c1867e41febfff6788f15b7351);
+        
+
+        marker_a70c7981b27149e783b48bbaa62bbe62.bindPopup(popup_75463a2cc6b144ab9780881cebfc4957)
+        ;
+
+        
+    
+    
+            marker_a70c7981b27149e783b48bbaa62bbe62.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Musicians Institute</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_42b3c9ad6eee4d9ba0bdecd1a9357bc2 = L.marker(
+                [37.4256293, -122.2053904],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_e9fffe88196741df923735dee9dc4ec3 = L.icon({"iconSize": [75, 56], "iconUrl": "https://www.pinclipart.com/picdir/big/113-1139107_nutella-clipart.png"});
+        marker_42b3c9ad6eee4d9ba0bdecd1a9357bc2.setIcon(custom_icon_e9fffe88196741df923735dee9dc4ec3);
+        
+    
+        var popup_4b51d39feec54f27aa822d1e66311021 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1e80191ea00548c09468245e83489ece = $(`<div id="html_1e80191ea00548c09468245e83489ece" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.musiccamp.org/"   target="_blank"" >   <h3>California Coast Music Camp</h3> </a> <ul>   <li><span>Program Type:</span> Summer</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 18+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>N/A   </li>   <li><span>Lodging and Meals</span> N/A</li>   <li><span>Summer Tuition:</span> 1220/week</li>   <li>     <span>Summer Lodging & Meals:</span>     Yes   </li>   <li>     <span>Address</span>:     <div id="addressDiv">P.O. Box 60875 Palo Alto, CA 94306-0875</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_4b51d39feec54f27aa822d1e66311021.setContent(html_1e80191ea00548c09468245e83489ece);
+        
+
+        marker_42b3c9ad6eee4d9ba0bdecd1a9357bc2.bindPopup(popup_4b51d39feec54f27aa822d1e66311021)
+        ;
+
+        
+    
+    
+            marker_42b3c9ad6eee4d9ba0bdecd1a9357bc2.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>California Coast Music Camp</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_807c7adedd2b461a99d989879da5927a = L.marker(
+                [32.7384924, -117.2177355],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_03dfa24dbf764c9ea5c1cd2fb4a84a7f = L.icon({"iconSize": [75, 50], "iconUrl": "https://www.pinclipart.com/picdir/big/132-1323406_my-friend-clipart.png"});
+        marker_807c7adedd2b461a99d989879da5927a.setIcon(custom_icon_03dfa24dbf764c9ea5c1cd2fb4a84a7f);
+        
+    
+        var popup_d7c1d4d6cc044986a6d4fe9fdc9fdf2b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_af57baf9a1cb402eb835975c98ea9950 = $(`<div id="html_af57baf9a1cb402eb835975c98ea9950" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.rmcsandiego.com/"   target="_blank"" >   <h3>Recreational Music Center</h3> </a> <ul>   <li><span>Program Type:</span> Independent, Enrichment</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 0+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>280 / month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 349/week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">2590 Truxtun Rd #202, San Diego, CA 92106</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_d7c1d4d6cc044986a6d4fe9fdc9fdf2b.setContent(html_af57baf9a1cb402eb835975c98ea9950);
+        
+
+        marker_807c7adedd2b461a99d989879da5927a.bindPopup(popup_d7c1d4d6cc044986a6d4fe9fdc9fdf2b)
+        ;
+
+        
+    
+    
+            marker_807c7adedd2b461a99d989879da5927a.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Recreational Music Center</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a7641dae73bf4bd7bf3bb0631d4e67c0 = L.marker(
+                [37.8070223, -122.4333696],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_8c76a49584914c23bff15cc5c465df39 = L.icon({"iconSize": [75, 75], "iconUrl": "https://www.pinclipart.com/picdir/big/404-4047943_thanksgiving-pie-clip-art.png"});
+        marker_a7641dae73bf4bd7bf3bb0631d4e67c0.setIcon(custom_icon_8c76a49584914c23bff15cc5c465df39);
+        
+    
+        var popup_85f2adaf224e4d718d87bd188a7f626a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_98e966cd99f54dfe951b18fe21c8176b = $(`<div id="html_98e966cd99f54dfe951b18fe21c8176b" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://bluebearmusic.org/"   target="_blank"" >   <h3>Blue Bear School of Music</h3> </a> <ul>   <li><span>Program Type:</span> Indepdendent, Enrichment</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 5+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>290 / month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 550/week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">Fort Mason Center 2 Marina Blvd. Bldg. D San Francisco, CA 94123</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_85f2adaf224e4d718d87bd188a7f626a.setContent(html_98e966cd99f54dfe951b18fe21c8176b);
+        
+
+        marker_a7641dae73bf4bd7bf3bb0631d4e67c0.bindPopup(popup_85f2adaf224e4d718d87bd188a7f626a)
+        ;
+
+        
+    
+    
+            marker_a7641dae73bf4bd7bf3bb0631d4e67c0.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Blue Bear School of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0cbf84bc3bd144a69975cbc9738f2511 = L.marker(
+                [37.7945696, -122.4235673],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_b032ee778c0d4450ba73b606cc88f629 = L.icon({"iconSize": [75, 60], "iconUrl": "https://www.pinclipart.com/picdir/big/57-576794_pusheen-clipart.png"});
+        marker_0cbf84bc3bd144a69975cbc9738f2511.setIcon(custom_icon_b032ee778c0d4450ba73b606cc88f629);
+        
+    
+        var popup_080eef0268a649fda39ab0bfed937278 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dc1bc0059cda47dfab655977bf257373 = $(`<div id="html_dc1bc0059cda47dfab655977bf257373" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://bird-sf.com/"   target="_blank"" >   <h3>Bird School of Music</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>              <li>Technology</li>              <li>Business</li>            </ul>   </li>   <li><span>Age Group:</span> 7+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>700 / 7 weeks   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 650/week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">1924 Polk St, San Francisco, CA 94109</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_080eef0268a649fda39ab0bfed937278.setContent(html_dc1bc0059cda47dfab655977bf257373);
+        
+
+        marker_0cbf84bc3bd144a69975cbc9738f2511.bindPopup(popup_080eef0268a649fda39ab0bfed937278)
+        ;
+
+        
+    
+    
+            marker_0cbf84bc3bd144a69975cbc9738f2511.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Bird School of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fb1b9a3ecfd14051a06e2e444904f2ae = L.marker(
+                [37.7755638, -122.4225988],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_5444f5034c374694b270ee21afd7aad9 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/494-4940754_viking-helmet-clip-art.png"});
+        marker_fb1b9a3ecfd14051a06e2e444904f2ae.setIcon(custom_icon_5444f5034c374694b270ee21afd7aad9);
+        
+    
+        var popup_0d7a7e17a20349579c8436c5ce8ebe38 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5c40bfe421f1410196215bfa201172a4 = $(`<div id="html_5c40bfe421f1410196215bfa201172a4" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://sfcm.edu/"   target="_blank"" >   <h3>San Francisco Conservatory of Music</h3> </a> <ul>   <li><span>Program Type:</span> College</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>            </ul>   </li>   <li><span>Age Group:</span> 18+, 13-19 for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>46,210 / annually   </li>   <li><span>Lodging and Meals</span> Yes</li>   <li><span>Summer Tuition:</span> 2575/3 weeks</li>   <li>     <span>Summer Lodging & Meals:</span>     Yes   </li>   <li>     <span>Address</span>:     <div id="addressDiv">50 Oak St San Francisco, CA 94102</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_0d7a7e17a20349579c8436c5ce8ebe38.setContent(html_5c40bfe421f1410196215bfa201172a4);
+        
+
+        marker_fb1b9a3ecfd14051a06e2e444904f2ae.bindPopup(popup_0d7a7e17a20349579c8436c5ce8ebe38)
+        ;
+
+        
+    
+    
+            marker_fb1b9a3ecfd14051a06e2e444904f2ae.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>San Francisco Conservatory of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3dc9a3e69746494f97f743be8fd2ce19 = L.marker(
+                [37.4237583, -122.1714845],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_fbb0f43f419d416e8405479a2212aaeb = L.icon({"iconSize": [75, 50], "iconUrl": "https://www.pinclipart.com/picdir/big/402-4025360_hot-and-cold-clipart.png"});
+        marker_3dc9a3e69746494f97f743be8fd2ce19.setIcon(custom_icon_fbb0f43f419d416e8405479a2212aaeb);
+        
+    
+        var popup_1d9ca42575824e92b2b8e65b3d084109 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dd9bf3a5d1f24b198e384c81ab26c666 = $(`<div id="html_dd9bf3a5d1f24b198e384c81ab26c666" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://stanfordjazz.org/"   target="_blank"" >   <h3>Stanford Jazz Worksop</h3> </a> <ul>   <li><span>Program Type:</span> Enrichment, Summer</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 12-18, 12+ for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>895 / semester   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 2485/week</li>   <li>     <span>Summer Lodging & Meals:</span>     Yes   </li>   <li>     <span>Address</span>:     <div id="addressDiv">Braun Music Center, 541 Lasuen Mall, Stanford, CA 94305</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_1d9ca42575824e92b2b8e65b3d084109.setContent(html_dd9bf3a5d1f24b198e384c81ab26c666);
+        
+
+        marker_3dc9a3e69746494f97f743be8fd2ce19.bindPopup(popup_1d9ca42575824e92b2b8e65b3d084109)
+        ;
+
+        
+    
+    
+            marker_3dc9a3e69746494f97f743be8fd2ce19.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Stanford Jazz Worksop</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6022d9bf48294028b2a3bd6e5e94718a = L.marker(
+                [37.7322058, -122.4379373],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_54bcc8a880cd4dc78c4fd6cea176e99b = L.icon({"iconSize": [75, 56], "iconUrl": "https://www.pinclipart.com/picdir/big/57-576993_pusheen-clipart.png"});
+        marker_6022d9bf48294028b2a3bd6e5e94718a.setIcon(custom_icon_54bcc8a880cd4dc78c4fd6cea176e99b);
+        
+    
+        var popup_845cbb97b1a64d959f3b3a727c2bb602 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_32b95aa6bbf545f189c3d7144f67237c = $(`<div id="html_32b95aa6bbf545f189c3d7144f67237c" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://waldenschool.org/"   target="_blank"" >   <h3>The Walden School</h3> </a> <ul>   <li><span>Program Type:</span> Summer</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>            </ul>   </li>   <li><span>Age Group:</span> 9-18</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>N/A   </li>   <li><span>Lodging and Meals</span> N/A</li>   <li><span>Summer Tuition:</span> 8600/5 weeks</li>   <li>     <span>Summer Lodging & Meals:</span>     Yes   </li>   <li>     <span>Address</span>:     <div id="addressDiv">30 Monterey Boulevard, Suite E San Francisco, CA 94131</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_845cbb97b1a64d959f3b3a727c2bb602.setContent(html_32b95aa6bbf545f189c3d7144f67237c);
+        
+
+        marker_6022d9bf48294028b2a3bd6e5e94718a.bindPopup(popup_845cbb97b1a64d959f3b3a727c2bb602)
+        ;
+
+        
+    
+    
+            marker_6022d9bf48294028b2a3bd6e5e94718a.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>The Walden School</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f8a62a64ec84b1dbe503b1a02a70b9c = L.marker(
+                [34.4194614, -119.6510238],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_6da5bb36c8624e0b8cfdece61ef8eaa9 = L.icon({"iconSize": [75, 60], "iconUrl": "https://www.pinclipart.com/picdir/big/409-4097702_pusheen-clipart.png"});
+        marker_6f8a62a64ec84b1dbe503b1a02a70b9c.setIcon(custom_icon_6da5bb36c8624e0b8cfdece61ef8eaa9);
+        
+    
+        var popup_1d3f2af582274c01b338decd732e918e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_300f73a432414f7e8459d331fb31e4a6 = $(`<div id="html_300f73a432414f7e8459d331fb31e4a6" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.musicacademy.org/"   target="_blank"" >   <h3>Music Academy of the West</h3> </a> <ul>   <li><span>Program Type:</span> Summer</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>            </ul>   </li>   <li><span>Age Group:</span> 18-34</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>N/A   </li>   <li><span>Lodging and Meals</span> N/A</li>   <li><span>Summer Tuition:</span> Full scholarship/8 weeks</li>   <li>     <span>Summer Lodging & Meals:</span>     Yes   </li>   <li>     <span>Address</span>:     <div id="addressDiv">1070 Fairway Rd, Santa Barbara, CA 93108</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_1d3f2af582274c01b338decd732e918e.setContent(html_300f73a432414f7e8459d331fb31e4a6);
+        
+
+        marker_6f8a62a64ec84b1dbe503b1a02a70b9c.bindPopup(popup_1d3f2af582274c01b338decd732e918e)
+        ;
+
+        
+    
+    
+            marker_6f8a62a64ec84b1dbe503b1a02a70b9c.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Music Academy of the West</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f19cae19d9dc49dc906914526b3d7fb0 = L.marker(
+                [30.3579102, -97.7636803],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_b8b9d83574d04295b896bcfe1c472d65 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/376-3768402_olivia-clipart.png"});
+        marker_f19cae19d9dc49dc906914526b3d7fb0.setIcon(custom_icon_b8b9d83574d04295b896bcfe1c472d65);
+        
+    
+        var popup_df47fed4a16941168dd22915c3c20209 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_00141f90ad114c428a7d86d72de7801f = $(`<div id="html_00141f90ad114c428a7d86d72de7801f" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.orpheusacademy.com/"   target="_blank"" >   <h3>Orpheus Academy of Music</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 5+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 336 / week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">​​​3918 Far West Blvd Ste C Austin, TX 78731</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_df47fed4a16941168dd22915c3c20209.setContent(html_00141f90ad114c428a7d86d72de7801f);
+        
+
+        marker_f19cae19d9dc49dc906914526b3d7fb0.bindPopup(popup_df47fed4a16941168dd22915c3c20209)
+        ;
+
+        
+    
+    
+            marker_f19cae19d9dc49dc906914526b3d7fb0.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Orpheus Academy of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a8f1b24fc0d6408580333040e1ca43c1 = L.marker(
+                [30.2861108, -97.7415521],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_cdad2c7fbdac4a728805d3868467edb8 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/206-2064738_architect-clipart.png"});
+        marker_a8f1b24fc0d6408580333040e1ca43c1.setIcon(custom_icon_cdad2c7fbdac4a728805d3868467edb8);
+        
+    
+        var popup_5ef0f02105d04ca69318a83ff5aa6087 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5f9c8b77bdb24464921a6aa8d121f23d = $(`<div id="html_5f9c8b77bdb24464921a6aa8d121f23d" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://music.utexas.edu/"   target="_blank"" >   <h3>Butler School of Music</h3> </a> <ul>   <li><span>Program Type:</span> College, Summer Progrm</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 18+, 12-18 for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>10,610 USD/annually in-state, 37,580/annually out-of-state   </li>   <li><span>Lodging and Meals</span> Yes</li>   <li><span>Summer Tuition:</span> 1,220 / week</li>   <li>     <span>Summer Lodging & Meals:</span>     Yes   </li>   <li>     <span>Address</span>:     <div id="addressDiv">110 Inner Campus Drive, Austin, TX 78705</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_5ef0f02105d04ca69318a83ff5aa6087.setContent(html_5f9c8b77bdb24464921a6aa8d121f23d);
+        
+
+        marker_a8f1b24fc0d6408580333040e1ca43c1.bindPopup(popup_5ef0f02105d04ca69318a83ff5aa6087)
+        ;
+
+        
+    
+    
+            marker_a8f1b24fc0d6408580333040e1ca43c1.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Butler School of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_72bb96deac95409da5970369fccd9e43 = L.marker(
+                [30.2337162, -97.7959071],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_3777186dd9a4476e906b1cf5c6346aec = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/23-239872_eating-clipart-black-and-white.png"});
+        marker_72bb96deac95409da5970369fccd9e43.setIcon(custom_icon_3777186dd9a4476e906b1cf5c6346aec);
+        
+    
+        var popup_c5b03d80cfa1422cabe8b3049b067bb0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_caf2f06296c147929288a107035bfbbd = $(`<div id="html_caf2f06296c147929288a107035bfbbd" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.rockcampusa.com/"   target="_blank"" >   <h3>Rock Camp USA</h3> </a> <ul>   <li><span>Program Type:</span> Summer</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Contemporary</li>              <li>Technology</li>            </ul>   </li>   <li><span>Age Group:</span> 8-19</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>N/A   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 850 / week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">2428 W Ben White Blvd, Austin, TX 78704</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_c5b03d80cfa1422cabe8b3049b067bb0.setContent(html_caf2f06296c147929288a107035bfbbd);
+        
+
+        marker_72bb96deac95409da5970369fccd9e43.bindPopup(popup_c5b03d80cfa1422cabe8b3049b067bb0)
+        ;
+
+        
+    
+    
+            marker_72bb96deac95409da5970369fccd9e43.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Rock Camp USA</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e893c398c80244e1a6bcb4c2b96d736a = L.marker(
+                [30.4724585, -97.7991493],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_153afa7b9aa344208e752c36b8256d7f = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/320-3209859_slumber-party-clip-art.png"});
+        marker_e893c398c80244e1a6bcb4c2b96d736a.setIcon(custom_icon_153afa7b9aa344208e752c36b8256d7f);
+        
+    
+        var popup_6aab632fa0da44f4b7b77c34b8e59301 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d658ed269d504a7d8263280897d44b2c = $(`<div id="html_d658ed269d504a7d8263280897d44b2c" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.austinschoolofmusic.com/"   target="_blank"" >   <h3>Austin School of Music</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 5+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>252/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">13945 North Highway 183, 78717</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_6aab632fa0da44f4b7b77c34b8e59301.setContent(html_d658ed269d504a7d8263280897d44b2c);
+        
+
+        marker_e893c398c80244e1a6bcb4c2b96d736a.bindPopup(popup_6aab632fa0da44f4b7b77c34b8e59301)
+        ;
+
+        
+    
+    
+            marker_e893c398c80244e1a6bcb4c2b96d736a.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Austin School of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d8516560ebe8475c983894295b18e5ca = L.marker(
+                [32.848354, -96.7896701],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_dfc56868a92f4dcbbb080c2f9f61a309 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/213-2138277_kids-swimming-clipart.png"});
+        marker_d8516560ebe8475c983894295b18e5ca.setIcon(custom_icon_dfc56868a92f4dcbbb080c2f9f61a309);
+        
+    
+        var popup_5b51689e9928434e838921920ba4a247 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_58aacd852a04421f863b6ccb2ae4506e = $(`<div id="html_58aacd852a04421f863b6ccb2ae4506e" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.austinschoolofmusic.com/"   target="_blank"" >   <h3>Dallas Academy of Music & Performing Arts</h3> </a> <ul>   <li><span>Program Type:</span> Independent, High School, Summer Program</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 0+, 13-18 for high school conservatory, 4+ for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>334/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 400 / 2 weeks</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">3415 Milton Avenue, Dallas, Texas 75205</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_5b51689e9928434e838921920ba4a247.setContent(html_58aacd852a04421f863b6ccb2ae4506e);
+        
+
+        marker_d8516560ebe8475c983894295b18e5ca.bindPopup(popup_5b51689e9928434e838921920ba4a247)
+        ;
+
+        
+    
+    
+            marker_d8516560ebe8475c983894295b18e5ca.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Dallas Academy of Music & Performing Arts</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8c860a482d084750bc598f25de470ba4 = L.marker(
+                [31.1007475, -97.3427978],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_5253cba7708e4dfab5a22765d66f13b0 = L.icon({"iconSize": [75, 75], "iconUrl": "https://www.pinclipart.com/picdir/big/403-4038142_luftballon-clipart.png"});
+        marker_8c860a482d084750bc598f25de470ba4.setIcon(custom_icon_5253cba7708e4dfab5a22765d66f13b0);
+        
+    
+        var popup_24400e311f0943e19616e7dda130b07a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f5d1a56a67f445dfb481bb82cb3a4106 = $(`<div id="html_f5d1a56a67f445dfb481bb82cb3a4106" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://amcentex.org/"   target="_blank"" >   <h3>The Academie Musique</h3> </a> <ul>   <li><span>Program Type:</span> Independent, Summer Program</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 0+, 12-18 for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>730/14 weeks   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 275 / week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">317 N 1st St, Temple, TX 76501</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_24400e311f0943e19616e7dda130b07a.setContent(html_f5d1a56a67f445dfb481bb82cb3a4106);
+        
+
+        marker_8c860a482d084750bc598f25de470ba4.bindPopup(popup_24400e311f0943e19616e7dda130b07a)
+        ;
+
+        
+    
+    
+            marker_8c860a482d084750bc598f25de470ba4.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>The Academie Musique</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f3135a999dd8469a8f8d2c3490d26d3a = L.marker(
+                [45.3034424, -122.7663632],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_cec67a1b72144aec9adb431e435f20a4 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/181-1816070_pusheen-clip-art.png"});
+        marker_f3135a999dd8469a8f8d2c3490d26d3a.setIcon(custom_icon_cec67a1b72144aec9adb431e435f20a4);
+        
+    
+        var popup_f2628cd4f3c24d6da37607e564152afc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aa2490080a954cf2af255261a59c11fa = $(`<div id="html_aa2490080a954cf2af255261a59c11fa" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.concertschool.com/"   target="_blank"" >   <h3>Concert School of Music</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 8+, 8-18 for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>250/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 195/week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">8261 SW Wilsonville Rd Suite A, Wilsonville, OR 97070</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_f2628cd4f3c24d6da37607e564152afc.setContent(html_aa2490080a954cf2af255261a59c11fa);
+        
+
+        marker_f3135a999dd8469a8f8d2c3490d26d3a.bindPopup(popup_f2628cd4f3c24d6da37607e564152afc)
+        ;
+
+        
+    
+    
+            marker_f3135a999dd8469a8f8d2c3490d26d3a.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Concert School of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b42744e30944e129c90690a88bc0e0e = L.marker(
+                [45.4848011, -122.752994],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_e8508304165c4b1ca5982563ef7174f8 = L.icon({"iconSize": [75, 45], "iconUrl": "https://www.pinclipart.com/picdir/big/460-4606142_aviator-goggles-clipart.png"});
+        marker_5b42744e30944e129c90690a88bc0e0e.setIcon(custom_icon_e8508304165c4b1ca5982563ef7174f8);
+        
+    
+        var popup_8659d8dd27c24fc4afc2498ee9c8d9dd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0ac9e9592f4a419793c6ad468712e2ac = $(`<div id="html_0ac9e9592f4a419793c6ad468712e2ac" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.pdxmusicschool.com/"   target="_blank"" >   <h3>Portland Music School</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>            </ul>   </li>   <li><span>Age Group:</span> 6+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>160/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">4848 SW Scholls Ferry Rd, Portland, OR 97225</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_8659d8dd27c24fc4afc2498ee9c8d9dd.setContent(html_0ac9e9592f4a419793c6ad468712e2ac);
+        
+
+        marker_5b42744e30944e129c90690a88bc0e0e.bindPopup(popup_8659d8dd27c24fc4afc2498ee9c8d9dd)
+        ;
+
+        
+    
+    
+            marker_5b42744e30944e129c90690a88bc0e0e.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Portland Music School</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9a5944b5c4834d33acd8f712e7e01ae5 = L.marker(
+                [44.055683, -121.30217],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_159721f07e514715a3536b5d39640404 = L.icon({"iconSize": [57, 57], "iconUrl": "https://www.pinclipart.com/picdir/big/332-3324858_fat-cat-clip-art.png"});
+        marker_9a5944b5c4834d33acd8f712e7e01ae5.setIcon(custom_icon_159721f07e514715a3536b5d39640404);
+        
+    
+        var popup_ea96af7b5bd8409895910f6a427dffa5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c34949f4ca074e6db841e7ebfc6bc54c = $(`<div id="html_c34949f4ca074e6db841e7ebfc6bc54c" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.ccschoolofmusic.org"   target="_blank"" >   <h3>Cascade School of Music</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>              <li>Technology</li>            </ul>   </li>   <li><span>Age Group:</span> 7+, 1+ for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>239/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 120/week, 1x a week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">510 NE 3rd St, Bend, OR 97701</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_ea96af7b5bd8409895910f6a427dffa5.setContent(html_c34949f4ca074e6db841e7ebfc6bc54c);
+        
+
+        marker_9a5944b5c4834d33acd8f712e7e01ae5.bindPopup(popup_ea96af7b5bd8409895910f6a427dffa5)
+        ;
+
+        
+    
+    
+            marker_9a5944b5c4834d33acd8f712e7e01ae5.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Cascade School of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0766f8582f04468e906288eebed9864d = L.marker(
+                [45.503504, -122.676762],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_a0ab11f9b494413694d2924a5e85dfc0 = L.icon({"iconSize": [75, 56], "iconUrl": "https://www.pinclipart.com/picdir/big/57-576625_pusheen-clipart.png"});
+        marker_0766f8582f04468e906288eebed9864d.setIcon(custom_icon_a0ab11f9b494413694d2924a5e85dfc0);
+        
+    
+        var popup_7f627817263c4943a5b7fe1dfb9dd70c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bfa25b0e0c0149b08faf1c157e8ea618 = $(`<div id="html_bfa25b0e0c0149b08faf1c157e8ea618" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="http://rhapsodymusicschool.com/"   target="_blank"" >   <h3>Rhapsody Music School</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>              <li>Technology</li>            </ul>   </li>   <li><span>Age Group:</span> 7+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>287/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">2718 SW Kelly Ave, Portland, OR 97201</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_7f627817263c4943a5b7fe1dfb9dd70c.setContent(html_bfa25b0e0c0149b08faf1c157e8ea618);
+        
+
+        marker_0766f8582f04468e906288eebed9864d.bindPopup(popup_7f627817263c4943a5b7fe1dfb9dd70c)
+        ;
+
+        
+    
+    
+            marker_0766f8582f04468e906288eebed9864d.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Rhapsody Music School</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a51ff46f70ae426aa91193775d558957 = L.marker(
+                [44.010478, -123.0900687],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_50f34a3082f14668959dd985e4d4de41 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/399-3997759_sushi-clipart.png"});
+        marker_a51ff46f70ae426aa91193775d558957.setIcon(custom_icon_50f34a3082f14668959dd985e4d4de41);
+        
+    
+        var popup_800200da087c4ec79db484ebb755d539 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_307c71ca585c42669315970026e43394 = $(`<div id="html_307c71ca585c42669315970026e43394" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.musicmastersstudio.com/"   target="_blank"" >   <h3>Music Masters Studio</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 7+, 9-16 for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 169/week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">380 E 40th Ave,  Eugene, OR 97405</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_800200da087c4ec79db484ebb755d539.setContent(html_307c71ca585c42669315970026e43394);
+        
+
+        marker_a51ff46f70ae426aa91193775d558957.bindPopup(popup_800200da087c4ec79db484ebb755d539)
+        ;
+
+        
+    
+    
+            marker_a51ff46f70ae426aa91193775d558957.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Music Masters Studio</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cca8631cde6646e69544d1f37f134eaf = L.marker(
+                [47.6181721, -122.3384317],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_4c9455a6e66643498f063f8912685309 = L.icon({"iconSize": [75, 56], "iconUrl": "https://www.pinclipart.com/picdir/big/113-1139107_nutella-clipart.png"});
+        marker_cca8631cde6646e69544d1f37f134eaf.setIcon(custom_icon_4c9455a6e66643498f063f8912685309);
+        
+    
+        var popup_7b6cdfcad4f946f9bf5cfe07b8b0a732 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_19f582a7181340f18eec0c46fe9ba2e2 = $(`<div id="html_19f582a7181340f18eec0c46fe9ba2e2" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.cornish.edu/"   target="_blank"" >   <h3>Cornish College of the Arts</h3> </a> <ul>   <li><span>Program Type:</span> College</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>              <li>Technology</li>            </ul>   </li>   <li><span>Age Group:</span> 18+, 3+ for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>41,642/annually   </li>   <li><span>Lodging and Meals</span> Yes</li>   <li><span>Summer Tuition:</span> 870/2 weeks</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">1000 Lenora St Seattle, WA 98121</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_7b6cdfcad4f946f9bf5cfe07b8b0a732.setContent(html_19f582a7181340f18eec0c46fe9ba2e2);
+        
+
+        marker_cca8631cde6646e69544d1f37f134eaf.bindPopup(popup_7b6cdfcad4f946f9bf5cfe07b8b0a732)
+        ;
+
+        
+    
+    
+            marker_cca8631cde6646e69544d1f37f134eaf.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Cornish College of the Arts</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0056188deedc4a5fa9a8561f100dff42 = L.marker(
+                [47.6037487, -122.3369397],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_42973344a1944708ba49bff8dc3dde28 = L.icon({"iconSize": [75, 50], "iconUrl": "https://www.pinclipart.com/picdir/big/132-1323406_my-friend-clipart.png"});
+        marker_0056188deedc4a5fa9a8561f100dff42.setIcon(custom_icon_42973344a1944708ba49bff8dc3dde28);
+        
+    
+        var popup_40b40d37918e4288ae04a7dd81528583 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f69c7f16c97040a08e58991f5805eb82 = $(`<div id="html_f69c7f16c97040a08e58991f5805eb82" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.recordingconnection.com/"   target="_blank"" >   <h3>Recording Connection Audio Institiute</h3> </a> <ul>   <li><span>Program Type:</span> Vocational School</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Technology</li>            </ul>   </li>   <li><span>Age Group:</span> 18+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>12,860/annually   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     N/A   </li>   <li>     <span>Address</span>:     <div id="addressDiv">Norton Building, 801 2nd Ave #800, Seattle, WA 98104</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_40b40d37918e4288ae04a7dd81528583.setContent(html_f69c7f16c97040a08e58991f5805eb82);
+        
+
+        marker_0056188deedc4a5fa9a8561f100dff42.bindPopup(popup_40b40d37918e4288ae04a7dd81528583)
+        ;
+
+        
+    
+    
+            marker_0056188deedc4a5fa9a8561f100dff42.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Recording Connection Audio Institiute</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a6111707aac54f3397c45b3efdf9e7ee = L.marker(
+                [47.677196, -117.4727627],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_c5f8a9fc080848efb5ecbf67851f12b1 = L.icon({"iconSize": [75, 75], "iconUrl": "https://www.pinclipart.com/picdir/big/404-4047943_thanksgiving-pie-clip-art.png"});
+        marker_a6111707aac54f3397c45b3efdf9e7ee.setIcon(custom_icon_c5f8a9fc080848efb5ecbf67851f12b1);
+        
+    
+        var popup_c6fa6266e8b147bd9fa696f16ea1c31b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_96517ed2259f4767986730fa050ea55e = $(`<div id="html_96517ed2259f4767986730fa050ea55e" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://hnmc.org"   target="_blank"" >   <h3>Holy Names Music Center</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>              <li>Technology</li>            </ul>   </li>   <li><span>Age Group:</span> 2+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>219.63/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 240/6 weeks</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">3910 West Custer Drive Spokane, WA 99224</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_c6fa6266e8b147bd9fa696f16ea1c31b.setContent(html_96517ed2259f4767986730fa050ea55e);
+        
+
+        marker_a6111707aac54f3397c45b3efdf9e7ee.bindPopup(popup_c6fa6266e8b147bd9fa696f16ea1c31b)
+        ;
+
+        
+    
+    
+            marker_a6111707aac54f3397c45b3efdf9e7ee.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Holy Names Music Center</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_22e271c41d274b15a17c7c1248cbaa05 = L.marker(
+                [47.6984667, -122.3492892],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_6ec2101702f84b5d910072c07845f12d = L.icon({"iconSize": [75, 60], "iconUrl": "https://www.pinclipart.com/picdir/big/57-576794_pusheen-clipart.png"});
+        marker_22e271c41d274b15a17c7c1248cbaa05.setIcon(custom_icon_6ec2101702f84b5d910072c07845f12d);
+        
+    
+        var popup_4499383f699a4ce897e671391f710eab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a2e992d2c4404f97bf989c68474b284a = $(`<div id="html_a2e992d2c4404f97bf989c68474b284a" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://www.musiccenternw.org/"   target="_blank"" >   <h3>Music Center of the Northwest</h3> </a> <ul>   <li><span>Program Type:</span> Independent, Enrichment</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 0+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>320/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">901 N 96th Street, Seattle, WA 98103</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_4499383f699a4ce897e671391f710eab.setContent(html_a2e992d2c4404f97bf989c68474b284a);
+        
+
+        marker_22e271c41d274b15a17c7c1248cbaa05.bindPopup(popup_4499383f699a4ce897e671391f710eab)
+        ;
+
+        
+    
+    
+            marker_22e271c41d274b15a17c7c1248cbaa05.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Music Center of the Northwest</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_94901141221f4d9e9770327eb318ae29 = L.marker(
+                [47.6617393, -122.3462236],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_b2dfbcce1fe54cbfb71aa6d4321e1cb9 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/494-4940754_viking-helmet-clip-art.png"});
+        marker_94901141221f4d9e9770327eb318ae29.setIcon(custom_icon_b2dfbcce1fe54cbfb71aa6d4321e1cb9);
+        
+    
+        var popup_a982dbbd66c245a3b618c9a97c89b5bb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f1923f96ad3443e4b072b5a4aaf6c376 = $(`<div id="html_f1923f96ad3443e4b072b5a4aaf6c376" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="http://offthewallschoolofmusic.com/"   target="_blank"" >   <h3>Off the Wall School of Music</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 8-14 for summer</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>304/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> 449/week</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">4509 Midvale Ave N Seattle WA, 98103</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_a982dbbd66c245a3b618c9a97c89b5bb.setContent(html_f1923f96ad3443e4b072b5a4aaf6c376);
+        
+
+        marker_94901141221f4d9e9770327eb318ae29.bindPopup(popup_a982dbbd66c245a3b618c9a97c89b5bb)
+        ;
+
+        
+    
+    
+            marker_94901141221f4d9e9770327eb318ae29.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Off the Wall School of Music</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c552dbde027b495bbab5547b8723e515 = L.marker(
+                [36.2816054, -115.2689678],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_2fc59c1dab2b4c8381cda009584d847b = L.icon({"iconSize": [75, 50], "iconUrl": "https://www.pinclipart.com/picdir/big/402-4025360_hot-and-cold-clipart.png"});
+        marker_c552dbde027b495bbab5547b8723e515.setIcon(custom_icon_2fc59c1dab2b4c8381cda009584d847b);
+        
+    
+        var popup_cc345fbecec243ab82c0dffe9ac8abfb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8954906dfded45c1a51558e22653ec21 = $(`<div id="html_8954906dfded45c1a51558e22653ec21" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="http://www.nvmusicacademy.com/"   target="_blank"" >   <h3>Nevada Music Academy</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 7+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>221/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">6525 N Buffalo Dr #150, Las Vegas, NV 89131</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_cc345fbecec243ab82c0dffe9ac8abfb.setContent(html_8954906dfded45c1a51558e22653ec21);
+        
+
+        marker_c552dbde027b495bbab5547b8723e515.bindPopup(popup_cc345fbecec243ab82c0dffe9ac8abfb)
+        ;
+
+        
+    
+    
+            marker_c552dbde027b495bbab5547b8723e515.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Nevada Music Academy</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b279b7606fde4b45adf4075e2742a2b3 = L.marker(
+                [35.9881719, -115.1037978],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_67cbae5a5cd54324940fc66ba2f43109 = L.icon({"iconSize": [75, 56], "iconUrl": "https://www.pinclipart.com/picdir/big/57-576993_pusheen-clipart.png"});
+        marker_b279b7606fde4b45adf4075e2742a2b3.setIcon(custom_icon_67cbae5a5cd54324940fc66ba2f43109);
+        
+    
+        var popup_11b4ca20a2264d9891ab3f7db1dfa3b7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f86da05e4565486788ffa63b286f0c56 = $(`<div id="html_f86da05e4565486788ffa63b286f0c56" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="https://rmamusicacademy.com/"   target="_blank"" >   <h3>Renaissance Music Academy</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>            </ul>   </li>   <li><span>Age Group:</span> 7+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>350/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">11221 S Eastern Ave # 210, Henderson, NV 89052</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_11b4ca20a2264d9891ab3f7db1dfa3b7.setContent(html_f86da05e4565486788ffa63b286f0c56);
+        
+
+        marker_b279b7606fde4b45adf4075e2742a2b3.bindPopup(popup_11b4ca20a2264d9891ab3f7db1dfa3b7)
+        ;
+
+        
+    
+    
+            marker_b279b7606fde4b45adf4075e2742a2b3.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Renaissance Music Academy</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d388d40437e44451afc554a511dafdef = L.marker(
+                [39.1507971, -119.7596507],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_eb46dd1ccc844337a92aec270e0fd3c9 = L.icon({"iconSize": [75, 60], "iconUrl": "https://www.pinclipart.com/picdir/big/409-4097702_pusheen-clipart.png"});
+        marker_d388d40437e44451afc554a511dafdef.setIcon(custom_icon_eb46dd1ccc844337a92aec270e0fd3c9);
+        
+    
+        var popup_770fc88b97c64aca8c953cc7ca2fe606 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_899da875e6a5475f848e03e400dfdaa9 = $(`<div id="html_899da875e6a5475f848e03e400dfdaa9" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="http://www.carsoncitymusiclessons.com/"   target="_blank"" >   <h3>Music Lessons Unlimited</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 5+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>240/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">1066 Mallory Way, Carson City, NV</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_770fc88b97c64aca8c953cc7ca2fe606.setContent(html_899da875e6a5475f848e03e400dfdaa9);
+        
+
+        marker_d388d40437e44451afc554a511dafdef.bindPopup(popup_770fc88b97c64aca8c953cc7ca2fe606)
+        ;
+
+        
+    
+    
+            marker_d388d40437e44451afc554a511dafdef.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Music Lessons Unlimited</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4106deb16e874bd092efda44a405a1bc = L.marker(
+                [39.4778494, -119.7653853],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_eec4cac4a6774f958b9775f4f47ed97e = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/376-3768402_olivia-clipart.png"});
+        marker_4106deb16e874bd092efda44a405a1bc.setIcon(custom_icon_eec4cac4a6774f958b9775f4f47ed97e);
+        
+    
+        var popup_b931b706aa8641dab30787803e32c4e2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_924d16b6cfcb47fd88688880af441cf7 = $(`<div id="html_924d16b6cfcb47fd88688880af441cf7" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="http://www.ariaschoolofmusicandart.org/"   target="_blank"" >   <h3>Aria School of Music & Art</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> Non-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Classical</li>              <li>Contemporary</li>            </ul>   </li>   <li><span>Age Group:</span> 7+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>232/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">3941 S McCarran Blvd, Reno, NV 89502</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_b931b706aa8641dab30787803e32c4e2.setContent(html_924d16b6cfcb47fd88688880af441cf7);
+        
+
+        marker_4106deb16e874bd092efda44a405a1bc.bindPopup(popup_b931b706aa8641dab30787803e32c4e2)
+        ;
+
+        
+    
+    
+            marker_4106deb16e874bd092efda44a405a1bc.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Aria School of Music & Art</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_54c4128e3c1b49f7bfa43fb589df42ef = L.marker(
+                [35.981424, -115.1002644],
+                {}
+            ).addTo(map_17e6afb893de4df5bbc7c3e33ac8f608);
+        
+    
+        var custom_icon_07e59cc850bf4c84b36e85d3ea90ce83 = L.icon({"iconSize": [75, 55], "iconUrl": "https://www.pinclipart.com/picdir/big/206-2064738_architect-clipart.png"});
+        marker_54c4128e3c1b49f7bfa43fb589df42ef.setIcon(custom_icon_07e59cc850bf4c84b36e85d3ea90ce83);
+        
+    
+        var popup_bad4b547eca44479bbd0eeb8b8ab8971 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_81408cd5621d47d0a6bd2b478edffe72 = $(`<div id="html_81408cd5621d47d0a6bd2b478edffe72" style="width: 100.0%; height: 100.0%;"><!--  program = line['program'] program_type = line['type'] funding = line['funding'] categories = [item.strip() for item in line['category'].split(',')] age_group = line['age_group'] tuition = line['tuition'] lodging_and_meals = line['lodging_and_meals'] summer_tuition = line['summer_tuition'] summer_lodging_and_meals = line['summer_lodging_and_meals'] address = line['address'] --> <a   href="http://deblancmusic.net/"   target="_blank"" >   <h3>Deblanc Music Entertainment</h3> </a> <ul>   <li><span>Program Type:</span> Independent</li>   <li><span>Funding:</span> For-profit</li>   <li>     <span>Category:</span>     <ul>              <li>Contemporary</li>              <li>Technology</li>              <li>Business</li>            </ul>   </li>   <li><span>Age Group:</span> 12+</li>   <li>     <span>Tuition:</span> <span id="money-sign">$</span>480/month   </li>   <li><span>Lodging and Meals</span> No</li>   <li><span>Summer Tuition:</span> N/A</li>   <li>     <span>Summer Lodging & Meals:</span>     No   </li>   <li>     <span>Address</span>:     <div id="addressDiv">2560 Anthem Village Dr #130, Henderson, NV 89052</div>   </li> </ul> <style>   h3 {     text-align: center;     white-space: nowrap;     color:lime;   }   h3:hover {     color:orange;   }   a:hover {     text-decoration: none;   }   li {     color: white;   }   span {     color: deeppink;   }   #addressDiv {     text-align: center;     max-width: fit-content;   }   #money-sign {     color:whitesmoke;   }    .leaflet-popup-content-wrapper {     background-color: #2b303b;   }    /* popup */    .leaflet-popup {     position: absolute;     text-align: center;     margin-bottom: 20px;   }   .leaflet-popup-content-wrapper {     padding: 1px;     text-align: left;     border-radius: 12px;   }   .leaflet-popup-content {     margin: 13px 19px;     line-height: 1.4;   }   .leaflet-popup-content p {     margin: 18px 0;   }   .leaflet-popup-tip-container {     width: 40px;     height: 20px;     position: absolute;     left: 50%;     margin-left: -20px;     overflow: hidden;     pointer-events: none;   }   .leaflet-popup-tip {     width: 17px;     height: 17px;     padding: 1px;      margin: -10px auto 0;      -webkit-transform: rotate(45deg);     -moz-transform: rotate(45deg);     -ms-transform: rotate(45deg);     transform: rotate(45deg);   }   .leaflet-popup-content-wrapper,   .leaflet-popup-tip {     background: #2b303b;     color: #333;     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);   }   .leaflet-container a.leaflet-popup-close-button {     position: absolute;     top: 0;     right: 0;     padding: 4px 4px 0 0;     border: none;     text-align: center;     width: 18px;     height: 14px;     font: 16px/14px Tahoma, Verdana, sans-serif;     color: #c3c3c3;     text-decoration: none;     font-weight: bold;     background: transparent;   }   .leaflet-container a.leaflet-popup-close-button:hover {     color: #999;   }   .leaflet-popup-scrolled {     overflow: auto;     border-bottom: 1px solid #ddd;     border-top: 1px solid #ddd;   }    .leaflet-oldie .leaflet-popup-content-wrapper {     -ms-zoom: 1;   }   .leaflet-oldie .leaflet-popup-tip {     width: 24px;     margin: 0 auto;      -ms-filter: 'progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)';     filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);   }   .leaflet-oldie .leaflet-popup-tip-container {     margin-top: -1px;   }    .leaflet-oldie .leaflet-control-zoom,   .leaflet-oldie .leaflet-control-layers,   .leaflet-oldie .leaflet-popup-content-wrapper,   .leaflet-oldie .leaflet-popup-tip {     border: 1px solid #999;   } </style></div>`)[0];
+            popup_bad4b547eca44479bbd0eeb8b8ab8971.setContent(html_81408cd5621d47d0a6bd2b478edffe72);
+        
+
+        marker_54c4128e3c1b49f7bfa43fb589df42ef.bindPopup(popup_bad4b547eca44479bbd0eeb8b8ab8971)
+        ;
+
+        
+    
+    
+            marker_54c4128e3c1b49f7bfa43fb589df42ef.bindTooltip(
+                `<div>
+                     <!-- 
+program = line['program']
+program_type = line['type']
+funding = line['funding']
+categories = [item.strip() for item in line['category'].split(',')]
+age_group = line['age_group']
+tuition = line['tuition']
+lodging_and_meals = line['lodging_and_meals']
+summer_tuition = line['summer_tuition']
+summer_lodging_and_meals = line['summer_lodging_and_meals']
+address = line['address']
+-->
+<h3>Deblanc Music Entertainment</h3>
+<style>
+  /* Tooltip */
+  /* Base styles for the element that has a tooltip */
+  .leaflet-tooltip {
+    /* opacity: 0.1; */
+    position: absolute;
+    padding: 6px;
+    background-color: #2b303b;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: deeppink;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .leaflet-tooltip.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .leaflet-tooltip-top:before,
+  .leaflet-tooltip-bottom:before,
+  .leaflet-tooltip-left:before,
+  .leaflet-tooltip-right:before {
+    position: absolute;
+    pointer-events: none;
+    border: 6px solid transparent;
+    background: transparent;
+    content: '';
+    opacity: 0.1;
+  }
+</style>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
